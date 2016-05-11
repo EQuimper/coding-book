@@ -1,12 +1,13 @@
+require('./db/connect');
 let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 
+const routes = require('./routes/index');
+
 let app = express();
 
-app.get('/', (req, res) => {
-	res.send('Hello World!');
-});
+app.use('/', routes);
 
 const PORT = process.env.PORT || 3000;
 
