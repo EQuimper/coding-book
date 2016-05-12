@@ -7,6 +7,8 @@ const routes = require('./routes/index');
 
 let app = express();
 
+app.use(bodyParser.json());
+app.use(express.static('../public'));
 app.use('/', routes);
 
 const PORT = process.env.PORT || 3000;
